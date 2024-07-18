@@ -93,6 +93,14 @@ DATABASES = {
         'PASSWORD':'',
         'HOST':'localhost',
         'PORT':'3306'
+        
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME':'nullxcod_rr',
+        # 'DATABASE':'nullxcod_rr',
+        # 'USER':'nullxcod_r',
+        # 'PASSWORD':'bIH_b0C8Z?)p',
+        # 'HOST':'localhost',
+        # 'PORT':'3306'
     }
 }
 
