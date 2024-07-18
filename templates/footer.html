@@ -1,0 +1,52 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{%static 'css/style.css'%}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <footer>
+        <div class="main-site-Wrapper">
+            <div class="primary-footer">
+                <div class="footer-nav1">
+                    <h2>Menu</h2>
+                    <ul>
+                        <li><a href="{% url 'home' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'faq' %}">FAQ</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-nav2">
+                    <h2>Mini Bio</h2>
+                    <p>Dari Mooch is a one stop solution for all your grooming needs. We’re the best at what we do and
+                        we leave no man behind. We're on a mission to style and groom every Pakistani man to their best
+                        self!</p>
+                </div>
+                <div class="footer-nav3">
+                    <h2>Contact</h2>
+                    <a href="mailto: support@darimooch.com"> support@darimooch.com </a>
+                    <a href="https://wa.me/+92 316 1115556">+92 316 1115556</a>
+                    <address>33 E1 Shahrah e Imam Hussain Gulberg III,<br>
+                        Lahore
+                        54660 <br>Pakistan</address>
+                </div>
+            </div>
+        </div>
+        
+                <div class="copy-right">
+                    <a href="">Powered by Shopify </a>
+                    <a href="">&copy2024, Dari Mooch</a>
+                </div>
+            
+    </footer>
+</body>
+
+</html>

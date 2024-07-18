@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% include 'header.html'%}
+  <title>{{product.name}}</title>
+</head>
+
+<body>
+  <div class="card mb-3">
+    <div class="row g-0">
+      <div class="col-md-6">
+        <img src="/media/{{product.image}}" class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h5 class="ccard-title">{{product.title}}</h5>
+
+          <div class="cata-date d-flex">
+            <div class="catagory-product">
+              {% if product.category %}
+              <small><strong>Category: </strong>{{ product.category }}</small>
+              {% endif %}
+
+            </div>
+            <div class="date-product">
+              {% if product.pub_date %}
+              <p class="card-text"><small class="text-body-secondary"><strong>Published Date: {{product.pub_date}}</strong></small></p>
+              {% endif %}
+            </div>
+          </div>
+          <div class="price-sale-display">
+            <div class="price-tag my-2">
+              <div class="final-price-box">
+                Price: {{product.price}}$
+              </div>
+            </div>
+            <div class="sale-tag-for-products">
+              <div class="final-sale-box">
+                {% if product.sale %}
+                <p>Sale {{product.sale}}%</p>
+              </div>
+            </div>
+            {% endif %}
+          </div>
+
+          <hr my-5>
+          <p class="ccard-text">{{product.description}}</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam deserunt sit explicabo officiis eveniet
+            necessitatibus quos voluptatibus distinctio, autem animi perferendis dolore quasi voluptate! Labore illo
+            fugit repellendus ipsum provident.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam deserunt sit explicabo officiis eveniet
+            necessitatibus quos voluptatibus distinctio, autem animi perferendis dolore quasi voluptate! Labore illo
+            fugit repellendus ipsum provident.</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam deserunt sit explicabo officiis eveniet
+            necessitatibus quos voluptatibus distinctio, autem animi perferendis dolore quasi voluptate! Labore illo
+            fugit repellendus ipsum provident.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% include 'footer.html'%}
+</body>
+
+</html>

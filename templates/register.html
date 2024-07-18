@@ -1,0 +1,33 @@
+{% include 'header.html'%}
+
+<div class="container w-50 my-5">
+    <h3 class="h1-login my-5">Register</h3>
+    <form method="post" action="{% url 'register-user' %}">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" name="first_name" id="bg-col-bd" class="form-control" id="name" aria-describedby="emailHelp" required>
+            </div>
+        <div class="row">
+            <div class="col">
+                <label for="name" class="form-label">Username</label>
+                <input type="text" name="username" id="bg-col-bd" class="form-control" id="name" aria-describedby="emailHelp" required>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" name="email" id="bg-col-bd" class="form-control" id="email" aria-describedby="emailHelp" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" name="password" id="bg-col-bd" class="form-control" id="password" required>
+        </div>
+        <div class="d-flex btn-div">
+            <button type="submit" class="btn btn-primary" id="btn-sty2-sub" >Create Account</button>
+            <a href="{% url 'login' %}" class="btn btn-primary" id="btn2-sty-sub">Login</a>
+        </div>
+    </form>
+</div>
+
+{% include 'footer.html'%}

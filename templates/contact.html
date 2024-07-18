@@ -1,0 +1,39 @@
+{% include "header.html" %}
+<main>
+  <div class="container">
+    <h1 class="main-contact-h1">Contact us</h1>
+    <p class="sec-contact-p">
+      Do you have any questions regarding your beard or do you need suggestions
+      for <br />
+      products? Reach out to us at: support@darimooch.com or call us at +92 316
+      1115556.
+    </p>
+  </div>
+  <div class="container w-50">
+    <form action="{% url 'savcontact' %}" method="POST" class="row g-3">
+      {% csrf_token %}
+      <div class="col-md-6">
+        <label for="name" class="form-label">Name</label>
+        <input style="padding: 6px; margin-top: 0; " name="name" type="text"
+          class="form-control" id="name" required>
+      </div>
+      <div class="col-md-6">
+        <label style="height: 40px !important;" for="email"  class="form-label">Email</label>
+        <input name="email" type="email" class="form-control" id="email" required>
+      </div>
+      <div class="col-12">
+        <label for="phone" class="form-label">Phone#</label>
+        <input name="phone" type="number" class="form-control" id="phone" placeholder="03xx-xxxxxxx" required>
+      </div>
+      <div class="col-12">
+        <label for="message" class="form-label">Message</label>
+        <textarea name="message" rows="5" cols="5" id="message" required></textarea>
+      </div>
+
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Send</button>
+      </div>
+  </div>
+  </form>
+</main>
+{% include 'footer.html'%}

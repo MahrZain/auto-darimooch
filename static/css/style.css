@@ -1,0 +1,698 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+/* font-family: Montserrat, sans-serif; */
+body {
+  padding: 0;
+  margin: 0;
+}
+/* Hide vertical scrollbar but keep scrolling */
+body {
+  overflow-y: scroll; /* Always show vertical scrollbar */
+}
+
+body::-webkit-scrollbar {
+  width: 0px;  /* Remove scrollbar space */
+  background: transparent;  /* Optional: just to avoid scrollbar space */
+}
+
+
+
+.announcement-head {
+  margin: 0;
+  height: 50px;
+  background-color: #212121;
+  position: relative;
+}
+.announcement-text {
+  font-family: Montserrat, sans-serif;
+  margin-top: 0px;
+  width: 100%;
+  position: absolute;
+  top: -11px;
+  color: rgb(255, 255, 255);
+  text-align: center;
+}
+.announcement-text a {
+  text-decoration: none;
+  text-decoration: underline;
+  color: #ffa500;
+}
+
+.announcement-tex > img {
+  color: white;
+}
+.container {
+  background-color: #e4e3e8;
+}
+.primary-nav {
+  height: auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-img-top {
+  width: 60%;
+  height: 254px;
+  position: relative;
+}
+.main-sale {
+  display: flex;
+}
+.sale-off {
+  margin-top: 1px;
+  margin-left: 70%;
+  z-index: 1;
+  margin-top: 2%;
+  position: absolute;
+  width: 28%;
+  height: 7%;
+  background-color: black;
+}
+.sale-off p {
+  color: white;
+  padding-left: 4%;
+  width: 100%;
+  margin-left: 3%;
+}
+.nav-menu {
+  display: flex;
+  justify-content: center;
+}
+.nav-menu ul {
+  display: flex;
+}
+.nav-menu ul li {
+  list-style: none;
+  list-style-type: none;
+}
+.nav-menu ul li a {
+  text-decoration: none;
+  margin: 5px;
+  color: black;
+  font-family: Montserrat, sans-serif;
+  padding: 5px;
+  position: relative; /* Required for the pseudo-element positioning */
+}
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1.5px;
+  background-color: black;
+  left: 50%;
+  bottom: 0;
+  transition: width 0.3s, left 0.3s;
+}
+.nav-menu a:hover::after {
+  width: 100%;
+  left: 0px;
+}
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 200, "GRAD" 110, "opsz" 99;
+}
+.seco-nav {
+  height: 20;
+  width: 22.3%;
+  margin: 5px;
+  padding: 5px;
+}
+
+* {
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.primary-footer {
+  padding-top: 20px;
+  margin-top: 30px;
+  background-color: #212121;
+  height: 50vh;
+  width: 100%;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  display: flex;
+  font-style: normal;
+}
+.footer-nav1 {
+  background-color: #212121;
+  width: 33.33%;
+}
+/* Style for Owl Carousel navigation buttons */
+.owl-nav {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.owl-nav .owl-prev,
+.owl-nav .owl-next {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+}
+
+.owl-nav .owl-prev {
+  left: 0;
+}
+
+.owl-nav .owl-next {
+  right: 0;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background: no-repeat 50%/100% 100%;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M4.88 0l-.08 8-4-4 4-4z'/%3e%3c/svg%3e");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 8 8'%3e%3cpath d='M3.12 0l.08 8 4-4-4-4z'/%3e%3c/svg%3e");
+}
+
+.footer-nav1 h2 {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+.footer-nav1 ul li {
+  list-style-type: none;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  margin: 15px;
+}
+.footer-nav1 ul li a {
+  list-style-type: none;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+
+.footer-nav2 {
+  background-color: #212121;
+  width: 33.33%;
+}
+.footer-nav2 h2 {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+.footer-nav2 p {
+  padding-left: 65px;
+  margin-left: 91px;
+  margin: 10px;
+  padding-inline: 11px;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  display: flex;
+  font-style: normal;
+}
+
+.footer-nav2 ul li {
+  list-style-type: none;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+.footer-nav2 ul li a {
+  list-style-type: none;
+  list-style: none;
+  text-decoration: none;
+  color: white;
+}
+
+.footer-nav3 {
+  background-color: #212121;
+  width: 33.33%;
+}
+.footer-nav3 h2 {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+.footer-nav3 a {
+  margin: 15px;
+  display: block;
+  list-style-type: none;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+}
+.footer-nav3 address {
+  padding-left: 114px;
+}
+.btn {
+  justify-content: center;
+}
+.hr {
+  height: 60px;
+  margin-bottom: 30px;
+  width: 100%;
+  background-color: #fcfcfc;
+  display: inline-block;
+}
+.copy-right {
+  padding-top: 2.5%;
+  height: 10vh;
+  float: right;
+  background-color: #212121;
+  width: 100%;
+  padding-left: 980px;
+  margin-bottom: 0;
+}
+.copy-right a {
+  text-decoration: none;
+  color: white;
+  font-size: small;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+.copy-right :first-child {
+  margin-right: 15px;
+}
+.main-img-header {
+  margin-right: -93px;
+}
+.copy-right a:nth-child(2) {
+  margin-right: 10px;
+}
+/* BODY CUSTOM CSS FILE HERE */
+
+body {
+  background-color: #e4e3e8 !important;
+  margin: 0;
+  padding: 0;
+}
+.btn-primary {
+  color: rgb(0, 0, 0) !important;
+  background-color: #ffffff !important;
+  border: 1.5px solid black !important;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  background-color: #e4e3e8 !important;
+  border-radius: 0 !important;
+}
+.btn-primary:hover {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  background-color: #e4e3e8;
+  color: rgb(255, 255, 255) !important;
+  background-color: black !important;
+}
+.heading {
+  display: block;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  margin-top: 10px;
+}
+.all-cards {
+  display: flex;
+  padding: 1px;
+  margin: 30px;
+  justify-content: center;
+}
+.all-cards {
+  margin: 10px;
+  background-color: #e4e3e8;
+  margin: 0;
+  padding: 0;
+}
+.card1 {
+  width: 33.33%;
+  margin-left: 60px;
+}
+.card2 {
+  width: 33.33%;
+}
+.card3 {
+  width: 33.33%;
+}
+.card-body {
+  background-color: #e4e3e8;
+  text-align: center;
+}
+.btn-icon-text {
+  display: inline-flex;
+  align-items: center;
+}
+.btn-icon-text i {
+  margin-right: 10px;
+}
+.card-text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  background-color: #e4e3e8;
+}
+.ccard-text {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  background-color: #e4e3e8;
+}
+.price-sale-display {
+  display: flex;
+}
+.bx-search-alt-2 {
+  color: black;
+  padding-top: 5px;
+}
+.search-term-btn {
+  width: 9vw;
+  margin-left: 6px;
+  padding-left: 7px;
+}
+.search-btn {
+  border: none;
+  background-color: #e4e3e8;
+  color: black;
+}
+.sale-tag-for-products {
+  width: 50%;
+}
+.final-sale-box {
+  background-color: #c00000;
+  border-radius: 3px;
+  color: white;
+  margin-top: 27%;
+  width: 40%;
+}
+.final-price-box {
+  color: #c00000;
+  font-size: 30px;
+  width: 50%;
+  margin-left: 17%;
+}
+.price-tag {
+  width: 50%;
+}
+.price-tag hr {
+  color: black;
+}
+.price {
+  color: #ca4445;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400px;
+  font-style: normal;
+  margin-left: 27px;
+  background-color: #e4e3e8;
+  display: inline-flex;
+}
+strike {
+  color: #757474;
+}
+.card-text {
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+.sec-product-carousel {
+  margin: 0;
+  justify-content: center;
+}
+.sale-box {
+  height: 33px;
+  width: 221px;
+  float: right;
+  color: black !important;
+}
+.position-relative {
+  margin-left: 212px;
+  width: 88px;
+  height: 6vh;
+  background-color: black !important;
+  color: white !important;
+}
+.second-banner img {
+  max-width: 100%;
+  height: auto;
+}
+.black-box {
+  position: absolute;
+  display: flex;
+  padding-bottom: 100px;
+}
+.new-letter-box {
+  height: 200px;
+  width: 95vw;
+  background-color: black;
+  justify-items: center;
+  text-align: center;
+  margin-left: 2vw;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: absolute;
+}
+
+.announcement-text {
+  margin-top: 24px;
+  /*padding-top: 40px; */
+}
+.input-box {
+  position: relative;
+  top: 9px;
+  margin-left: 298px;
+  margin-top: 90px;
+  color: white;
+}
+.input-box input {
+  width: 35vw;
+  height: 9vh;
+  border-radius: 0px solid black;
+}
+.input-box button {
+  margin-left: 60px;
+  background-color: black;
+  border-radius: 0px;
+  border: 0px;
+  color: white;
+}
+.all-cards-sec {
+  margin-top: 19px;
+  margin-bottom: 20px;
+}
+#carouselExampleRide {
+  margin-top: 10px;
+}
+.main-heading {
+  text-align: center;
+  display: block;
+  margin-bottom: 100px;
+}
+.second-heading {
+  font-style: bold;
+}
+.main-contact-h1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.sec-contact-p {
+  text-align: center;
+  margin-bottom: 50px;
+}
+/* Style inputs with type="text", select elements and textareas */
+input[type="text"],
+select,
+textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 6px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type="submit"] {
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container-last {
+  margin-top: 25px;
+  border-radius: 5px;
+  background-color: #e4e3e8;
+  padding: 20px;
+}
+.button-main {
+  display: block;
+}
+.Send-button {
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: none;
+  justify-content: center;
+  text-align: center;
+  width: 20%;
+}
+.last-news-letter {
+  background-color: black;
+  height: 34vh;
+  width: 100%;
+  border-radius: 5px;
+}
+.news-letter-heading {
+  text-align: center;
+  color: white;
+  padding-top: 11px;
+  padding-bottom: 20px;
+}
+.email-input-box {
+  padding-left: 27px;
+  margin-left: 222px;
+  width: 90vh;
+  height: 9vh;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+.card {
+  /* height: 84vh !important; */
+  margin-top: 10% !important;
+}
+.email-input-box-button {
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding-left: 62px;
+}
+.product-info {
+  display: flex;
+  justify-content: space-evenly;
+}
+.sold-out p {
+  margin-top: 2px;
+  margin-bottom: 2rem;
+}
+.rate {
+  padding-bottom: 34px;
+}
+.card {
+  margin: 5% !important;
+  max-width: 100%;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap; /* Allow content to wrap */
+  height: auto; /* Adjust height to content */
+}
+.col-md-6 {
+  flex: 1 1 50%; /* Allow columns to take up 50% width and wrap */
+  display: flex;
+  align-items: stretch;
+  box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+.img-fluid {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.card-body {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+.card-title {
+  font-family: Montserrat, sans-serif;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-wrap: nowrap;
+  font-size: 15px;
+}
+.ccard-title {
+  font-family: Montserrat, sans-serif;
+  font-size: 30px;
+}
+.catagory-product {
+  margin-top: 17.4px;
+}
+.date-product {
+  margin: 0;
+}
+#bg-col-bd {
+  background-color: #e4e3e8;
+  border-color: #b7b5b5;
+  border-radius: 0;
+  font-family: Montserrat, sans-serif;
+  height: 8vh;
+}
+#btn-sty-sub {
+  width: 8vw;
+  background-color: black !important;
+  color: white !important;
+  margin-top: 5%;
+}
+#btn-sty-sub:hover {
+  background-color: rgb(255, 255, 255) !important;
+  color: rgb(0, 0, 0) !important;
+}
+#btn2-sty-sub {
+  width: 12vw;
+  background-color: #f0f0f0 !important;
+  color: rgb(0, 0, 0) !important;
+  margin-top: 5%;
+  margin-left: 2%;
+  height: 39px;
+}
+#btn2-sty-sub:hover {
+  background-color: rgb(0, 0, 0) !important;
+  color: rgb(245, 245, 245) !important;
+}
+.h1-login {
+  text-align: center;
+}
+#btn-sty2-sub{
+  width: 12vw;
+    height: 39px;
+    margin-top: 5%;
+    margin-right: 2%;
+}
+
