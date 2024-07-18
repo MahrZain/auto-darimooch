@@ -86,24 +86,24 @@ WSGI_APPLICATION = 'python.wsgi.application'
 #--------------FOR Local Host WEBSITE------------------#
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-        'NAME':'e-com-mooch',
-        'DATABASE':'e-com-mooch',
-        'USER':'root',
-        'PASSWORD':'',
-        'HOST':'localhost',
-        'PORT':'3306'
+        # 'ENGINE': 'django.db.backends.mysql',
+        # # 'NAME': BASE_DIR / 'db.sqlite3',
+        # 'NAME':'e-com-mooch',
+        # 'DATABASE':'e-com-mooch',
+        # 'USER':'root',
+        # 'PASSWORD':'',
+        # 'HOST':'localhost',
+        # 'PORT':'3306'
         
         #--------------FOR LIVE WEBSITE------------------#
         
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME':'nullxcod_rr',
-        # 'DATABASE':'nullxcod_rr',
-        # 'USER':'nullxcod_r',
-        # 'PASSWORD':'bIH_b0C8Z?)p',
-        # 'HOST':'localhost',
-        # 'PORT':'3306'
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME':'nullxcod_rr',
+        'DATABASE':'nullxcod_rr',
+        'USER':'nullxcod_r',
+        'PASSWORD':'bIH_b0C8Z?)p',
+        'HOST':'localhost',
+        'PORT':'3306'
     }
 }
 
@@ -151,11 +151,11 @@ USE_TZ = True
 # MEDIA_ROOT = BASE_DIR / 'media'
 
                         #--------------FOR LIVE WEBSITE------------------#
-# STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-# MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
