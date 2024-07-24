@@ -1,0 +1,21 @@
+{% load static %}
+{% include 'header.html' %}
+
+<div class="heading my-5">
+  <h3>All Products</h3>
+  <div class="row">
+    {% for product in pagenum %}
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img src="media/{{ product.image }}" class="card-img-top" alt="{{ product.title }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ product.title }}</h5>
+          <p class="card-text">{{ product.description }}</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% include 'footer.html' %}

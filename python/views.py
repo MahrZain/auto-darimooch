@@ -9,16 +9,24 @@ from contact.models import Contact
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from django.core.paginator import Paginator
 
 
 # Create Views Here
 def home(request):
     pr_data = products.objects.all()
+    product = Paginator(pr_data, 2)
+    if 'page' in request.GET:
+        data = request.GET['page']
+    else:
+        data = page = 1
+    pg_number = product.get_page(data)
     car_data = carousel.objects.all()
     sec_banner = banner.objects.all()
     latest_logo = limage.objects.all()
     msg_text = Announcement.objects.all()
     nav_bar = nav.objects.all()
+    all_products = products.objects.all()
     data = {
         "products": pr_data,
         "carousel": car_data,
@@ -26,6 +34,7 @@ def home(request):
         "logo": latest_logo,
         "message": msg_text,
         "nav": nav_bar,
+        "pg_number": pg_number,
     }
     return render(request, "index.html", data)
 
@@ -33,6 +42,17 @@ def home(request):
 def contact(request):
     return render(request, "contact.html")
 
+def allpro(request):
+    pr_data = products.objects.all()
+    paginator = Paginator(products.objects.all(), 2)
+    page_number = request.GET.get('page')
+    pagenum = paginator.get_page(page_number)
+    data = {
+        'pr_data':pr_data,
+        'pagenum': pagenum
+    }
+    print(data)
+    return render(request, 'all_products_page.html', data)
 
 def savcontact(request):
     if request.method == "POST":
@@ -47,6 +67,9 @@ def savcontact(request):
             sav.save()
     return render(request, "contact.html")
 
+def allpro(request):
+    pr_data = products.objects.all()
+    return render(request,"all_products_page.html",{"pr_data":pr_data})
 
 def search(request, mytitle):
     query = request.GET.get("searched")

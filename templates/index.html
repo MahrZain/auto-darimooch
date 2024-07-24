@@ -61,12 +61,44 @@
           <span class="visually-hidden">Next</span>
         </button>
       </div>
-
+{{pg_number}}
       <div class="heading my-5">
         <h3>All Products</h3>
 
-        <div class="owl-carousel owl-theme">
-          {% for product in products %}
+        <div class="row">
+            {% for product in pg_number %}
+            <div class="col-md-4">
+              <div class="card">
+                {% if product.sale %}
+                <div class="main-sale">
+                  <div class="sale-off">
+                    <p>Save {{product.sale}}%</p>
+                  </div>
+                </div>
+                {% endif %}
+                <img style="width: 100%;"
+                  src="media/{{product.image}}"
+                  class="card-img-top"
+                  alt=""
+                />
+                <div class="card-body">
+                  <h5 class="card-title">{{product.title}}</h5>
+                  <h5 style="font-size: 15px">Price: {{product.price}}$</h5>
+
+                  <a
+                    href="{% url 'allproducts' %}"
+                    class="btn btn-primary btn-icon-text"
+                    ><i class="bx bxs-cart-add bx-sm"></i>View Detail</a
+                  >
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+
+        {% comment %} <div class="owl-carousel owl-theme">
+          {% for product in pg_number %}
           <div class="item">
             <div class="col-md-13">
               <div class="card">
@@ -87,7 +119,7 @@
                   <h5 style="font-size: 15px">Price: {{product.price}}$</h5>
 
                   <a
-                    href="products/{{product.id}}"
+                    href="{% url 'allproducts' %}"
                     class="btn btn-primary btn-icon-text"
                     ><i class="bx bxs-cart-add bx-sm"></i>View Detail</a
                   >
@@ -96,7 +128,7 @@
             </div>
           </div>
           {% endfor %}
-        </div>
+        </div> {% endcomment %}
       </div>
       <!-- </div> all 1st Cards Main Div -->
       <!-- 2nd Fashion Cards -->
