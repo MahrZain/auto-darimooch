@@ -19,7 +19,7 @@ def home(request):
     if 'page' in request.GET:
         data = request.GET['page']
     else:
-        data = page = 1
+        data = page = 1 
     pg_number = product.get_page(data)
     car_data = carousel.objects.all()
     sec_banner = banner.objects.all()
