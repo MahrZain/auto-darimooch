@@ -21,6 +21,8 @@ def home(request):
     else:
         data = page = 1 
     pg_number = product.get_page(data)
+    totalpages = [x+1 for x in range(product.num_pages)]
+    
     car_data = carousel.objects.all()
     sec_banner = banner.objects.all()
     latest_logo = limage.objects.all()
@@ -35,6 +37,7 @@ def home(request):
         "message": msg_text,
         "nav": nav_bar,
         "pg_number": pg_number,
+        "totalpages":totalpages
     }
     return render(request, "index.html", data)
 
@@ -42,17 +45,17 @@ def home(request):
 def contact(request):
     return render(request, "contact.html")
 
-def allpro(request):
-    pr_data = products.objects.all()
-    paginator = Paginator(products.objects.all(), 2)
-    page_number = request.GET.get('page')
-    pagenum = paginator.get_page(page_number)
-    data = {
-        'pr_data':pr_data,
-        'pagenum': pagenum
-    }
-    print(data)
-    return render(request, 'all_products_page.html', data)
+# def allpro(request):
+#     pr_data = products.objects.all()
+#     paginator = Paginator(products.objects.all(), 2)
+#     page_number = request.GET.get('page')
+#     pagenum = paginator.get_page(page_number)
+#     data = {
+#         'pr_data':pr_data,
+#         'pagenum': pagenum
+#     }
+#     print(data)
+#     return render(request, 'all_products_page.html', data)
 
 def savcontact(request):
     if request.method == "POST":
