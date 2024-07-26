@@ -10,19 +10,20 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.core.paginator import Paginator
+import os
 
 
 # Create Views Here
 def home(request):
     pr_data = products.objects.all()
     product = Paginator(pr_data, 2)
-    if 'page' in request.GET:
-        data = request.GET['page']
+    if "page" in request.GET:
+        data = request.GET["page"]
     else:
-        data = page = 1 
+        data = page = 1
     pg_number = product.get_page(data)
-    totalpages = [x+1 for x in range(product.num_pages)]
-    
+    totalpages = [x + 1 for x in range(product.num_pages)]
+
     car_data = carousel.objects.all()
     sec_banner = banner.objects.all()
     latest_logo = limage.objects.all()
@@ -37,13 +38,14 @@ def home(request):
         "message": msg_text,
         "nav": nav_bar,
         "pg_number": pg_number,
-        "totalpages":totalpages
+        "totalpages": totalpages,
     }
     return render(request, "index.html", data)
 
 
 def contact(request):
     return render(request, "contact.html")
+
 
 # def allpro(request):
 #     pr_data = products.objects.all()
@@ -56,6 +58,7 @@ def contact(request):
 #     }
 #     print(data)
 #     return render(request, 'all_products_page.html', data)
+
 
 def savcontact(request):
     if request.method == "POST":
@@ -70,9 +73,11 @@ def savcontact(request):
             sav.save()
     return render(request, "contact.html")
 
+
 def allpro(request):
     pr_data = products.objects.all()
-    return render(request,"all_products_page.html",{"pr_data":pr_data})
+    return render(request, "all_products_page.html", {"pr_data": pr_data})
+
 
 def search(request, mytitle):
     query = request.GET.get("searched")
@@ -91,6 +96,7 @@ def about(request):
 def login_view(request):
     return render(request, "login.html")
 
+
 def logoutUser(request):
     logout(request)
     return render(request, "login.html")
@@ -101,8 +107,8 @@ def loginUser(request):
     password = request.POST["password"]
     user = authenticate(request, username=username, password=password)
     if user is not None:
-        request.session['username'] = user.username
-        request.session['email'] = user.email
+        request.session["username"] = user.username
+        request.session["email"] = user.email
         login(request, user)
         messages.success(request, "Login Successfull!")
         return redirect("home")
@@ -121,7 +127,9 @@ def registerUser(request):
     username = request.POST["username"]
     email = request.POST["email"]
     password = request.POST["password"]
-    user = User.objects.create_user(first_name=first_name,username=username, email=email, password=password)
+    user = User.objects.create_user(
+        first_name=first_name, username=username, email=email, password=password
+    )
     return render(request, "register.html")
 
 
@@ -135,6 +143,13 @@ def faq(request):
 
 
 def search(request):
+
     result = request.GET["query"]
+    if result == "":
+        return redirect("home")
     fresult = products.objects.filter(title__icontains=result)
-    return render(request, "search.html", {"fresult": fresult, "result":result})
+    if not fresult:
+        messages.error(request, "Nothing Found!")
+        return render(request, "search.html", {"result": result})
+    else:
+        return render(request, "search.html", {"fresult": fresult, "result": result})
