@@ -133,8 +133,8 @@ def registerUser(request):
     return render(request, "register.html")
 
 
-def viewproducts(request, new_slug):
-    product = products.objects.filter(id=new_slug)
+def viewproducts(request, myid):
+    product = products.objects.filter(id=myid)
     return render(request, "products.html", {"product": product[0]})
 
 
