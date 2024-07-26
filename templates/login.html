@@ -3,10 +3,13 @@
 <div class="container w-50 my-5">
     <h3 class="h1-login">Login</h3>
     {% if messages %}
-    {% for message in messages %}
-    <p style="text-align: center;
-    font-size: 20px; color:red;">{{message}}</p>
-    {% endfor %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>
+            {{ message }}
+        </li>
+        {% endfor %}
+    </ul>
     {% endif %}
     <form method="post" action="{% url 'login-user' %}">
         {% csrf_token %}

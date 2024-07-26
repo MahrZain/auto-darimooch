@@ -104,6 +104,7 @@ def loginUser(request):
         request.session['username'] = user.username
         request.session['email'] = user.email
         login(request, user)
+        messages.success(request, "Login Successfull!")
         return redirect("home")
 
     else:
@@ -136,4 +137,4 @@ def faq(request):
 def search(request):
     result = request.GET["query"]
     fresult = products.objects.filter(title__icontains=result)
-    return render(request, "search.html", {"fresult": fresult})
+    return render(request, "search.html", {"fresult": fresult, "result":result})
