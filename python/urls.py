@@ -42,7 +42,7 @@ urlpatterns = [
     path('savcontact/', views.savcontact, name='savcontact' ),
     path('allproducts/', views.allpro, name='allproducts' ),
     path('search/', views.search, name='search' ),
-    path('products/<int:myid>/<int:new_slug>/', views.viewproducts, name='products' ),
+    path('products/<int:myid>', views.viewproducts, name='products' ),
     
 ]
 
