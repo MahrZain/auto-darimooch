@@ -133,9 +133,9 @@ def registerUser(request):
     return render(request, "register.html")
 
 
-def viewproducts(request,myslug):
-    product = products.objects.filter(title=myslug)
-    return render(request, "products.html", {"product": product[0], "myslug":myslug})
+def viewproducts(request,slug):
+    product = products.objects.filter(new_slug=slug)
+    return render(request, "products.html", {"product": product[0], "slug":slug})
 
 
 def faq(request):
