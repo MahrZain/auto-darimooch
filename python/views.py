@@ -163,7 +163,7 @@ def smtp(request):
             "Testing",
             "Your Test Message",
             "info@nullxcoder.xyz",  # Sender email
-            ["test-20slatku6@srv1.mail-tester.com"],
+            ["mehar00zain@gmail.com"],
             fail_silently=False,
         )
         return redirect('home')
