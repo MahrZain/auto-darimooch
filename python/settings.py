@@ -169,3 +169,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+host: 'mail.nullxcoder.xyz'
+port: '465'
+username: 'info@nullxcoder.xyz'
+password: 'Pq-?C@6TH27Z'
+use_tls: True

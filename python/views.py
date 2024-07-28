@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.core.paginator import Paginator
+from django.core.mail import send_mail
 import os
 
 
@@ -133,9 +134,9 @@ def registerUser(request):
     return render(request, "register.html")
 
 
-def viewproducts(request,slug):
+def viewproducts(request, slug):
     product = products.objects.filter(new_slug=slug)
-    return render(request, "products.html", {"product": product[0], "slug":slug})
+    return render(request, "products.html", {"product": product[0], "slug": slug})
 
 
 def faq(request):
@@ -153,3 +154,13 @@ def search(request):
         return render(request, "search.html", {"result": result})
     else:
         return render(request, "search.html", {"fresult": fresult, "result": result})
+
+
+def smtp(request):
+    send_mail(
+        "Testing",
+        "Your Test Message",
+        "mail.nullxcoder.xyz",
+        ["mehar00zain@gmail.com"],
+        fail_silently=False,
+    )

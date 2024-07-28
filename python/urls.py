@@ -42,6 +42,7 @@ urlpatterns = [
     path('savcontact/', views.savcontact, name='savcontact' ),
     path('allproducts/', views.allpro, name='allproducts' ),
     path('search/', views.search, name='search' ),
+    path('smtp/', views.smtp, name='smtp' ),
     path('products/<str:slug>', views.viewproducts, name='products' ),
     
 ]
