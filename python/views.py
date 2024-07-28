@@ -162,7 +162,7 @@ def smtp(request):
         send_mail(
             "Testing",
             "Your Test Message",
-            "info@nullxcoder.xyz",  # Sender email
+            "info@nullxcoder.xyz",  
             ["mehar00zain@gmail.com"],
             fail_silently=False,
         )
