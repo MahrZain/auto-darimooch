@@ -11,6 +11,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from django.core.paginator import Paginator
 from django.core.mail import send_mail
+from django.http import HttpResponse
 import os
 
 
@@ -157,11 +158,14 @@ def search(request):
 
 
 def smtp(request):
-    send_mail(
-        "Testing",
-        "Your Test Message",
-        "info@nullxcoder.xyz",  # Use the sender email address here
-        ["mehar00zain@gmail.com"],
-        fail_silently=False,
-    )
-    return HttpResponse("Email sent successfully")
+    try:
+        send_mail(
+            "Testing",
+            "Your Test Message",
+            "info@nullxcoder.xyz",  # Sender email
+            ["mehar00zain@gmail.com"],
+            fail_silently=False,
+        )
+        return HttpResponse("Email sent successfully")
+    except Exception as e:
+        return HttpResponse(f"Error: {e}")

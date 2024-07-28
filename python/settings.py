@@ -170,10 +170,10 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-host: 'mail.nullxcoder.xyz'
-port: '465'
-username: 'info@nullxcoder.xyz'
-password: 'Pq-?C@6TH27Z'
-use_tls: True
-EMAIL_USE_SSL = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'mail.nullxcoder.xyz'
+EMAIL_PORT = 587  # or 587 if you switch to TLS
+EMAIL_USE_TLS = True  # or True if you switch to port 587
+EMAIL_USE_SSL = False   # or False if you switch to port 587
+EMAIL_HOST_USER = 'info@nullxcoder.xyz'
+EMAIL_HOST_PASSWORD = 'Pq-?C@6TH27Z'
