@@ -158,14 +158,13 @@ def search(request):
 
 
 def smtp(request):
-    try:
+    
         send_mail(
             "Testing",
             "Your Test Message",
             "info@nullxcoder.xyz",  # Sender email
-            ["mehar00zain@gmail.com"],
+            ["test-20slatku6@srv1.mail-tester.com"],
             fail_silently=False,
         )
-        return HttpResponse("Email sent successfully")
-    except Exception as e:
-        return HttpResponse(f"Error: {e}")
+        return redirect('home')
+    
