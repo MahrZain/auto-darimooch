@@ -1,0 +1,19 @@
+{% include 'header.html' %}
+<div class="container w-50">
+    <form action="{% url 'submit_complaint' %}">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+            <input name="email" type="email" class="form-control" id="exampleFormControlInput1"
+                placeholder="name@example.com">
+        </div>
+        <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Complaint</label>
+            <textarea name="complain" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <div class="col-12">
+           <button class="btn btn-primary" type="submit">Submit Complain</button>
+        </div>
+
+    </form>
+</div>
+{% include 'footer.html' %}

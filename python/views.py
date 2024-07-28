@@ -167,3 +167,20 @@ def smtp(request):
         fail_silently=False,
     )
     return redirect("home")
+
+
+def complaint(request):
+    return render(request, "complaint.html")
+
+
+def submit_complaint(request):
+    email = request.GET["email"]
+    complain = request.GET["complain"]
+    send_mail(
+        "From DariMooch Complaint!",
+        f''' Message: {complain}  --------------------- From Dari Mooch Complaint System -------------------------------- ''',
+        f"{email}",
+        ["info@nullxcoder.xyz"],
+        fail_silently=False,
+        )
+    return render(request, "complaint.html")

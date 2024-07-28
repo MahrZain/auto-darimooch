@@ -42,6 +42,8 @@ urlpatterns = [
     path('savcontact/', views.savcontact, name='savcontact' ),
     path('allproducts/', views.allpro, name='allproducts' ),
     path('search/', views.search, name='search' ),
+    path('complaint/', views.complaint, name='complaint' ),
+    path('submit_complaint/', views.submit_complaint, name='submit_complaint' ),
     path('smtp/', views.smtp, name='smtp' ),
     path('products/<str:slug>', views.viewproducts, name='products' ),
     
