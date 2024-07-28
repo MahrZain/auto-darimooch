@@ -231,12 +231,15 @@
     <div class="container-last">
       <div class="last-news-letter">
         <h2 class="news-letter-heading">News Letter</h2>
-        <input
+        <form action="{% url 'smtp' %}" method="get">
+          <input
           class="email-input-box"
           type="email"
           placeholder="email@example.com"
+          name="news_email"
         />
-        <button class="email-input-box-button">Subscribe</button>
+        <button type="submit" class="email-input-box-button">Subscribe</button>
+        </form>
       </div>
       <!-- /.last-news-letter -->
     </div>

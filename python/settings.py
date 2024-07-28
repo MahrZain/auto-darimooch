@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ll0-$z*lr1mrtl+s=yp3&ecj0bi+$on9-_0gb7&w+*z$+^fl!b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -173,7 +173,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'mail.nullxcoder.xyz'
 EMAIL_PORT = 587  # or 587 if you switch to TLS
-EMAIL_USE_TLS = True  # or True if you switch to port 587
-EMAIL_USE_SSL = False   # or False if you switch to port 587
+EMAIL_USE_TLS = True  # or True if you switch to port 587  # or False if you switch to port 587
 EMAIL_HOST_USER = 'info@nullxcoder.xyz'
 EMAIL_HOST_PASSWORD = 'Pq-?C@6TH27Z'

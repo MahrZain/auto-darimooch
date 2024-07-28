@@ -158,13 +158,12 @@ def search(request):
 
 
 def smtp(request):
-    
-        send_mail(
-            "Testing",
-            "Your Test Message",
-            "info@nullxcoder.xyz",  
-            ["mehar00zain@gmail.com"],
-            fail_silently=False,
-        )
-        return redirect('home')
-    
+    email = request.GET["news_email"]
+    send_mail(
+        "News Letter For DariMooch",
+        f"Hi this Email:  { email }   Want To Subscribe For Your News Letter. -- form DariMooch",
+        "info@nullxcoder.xyz",
+        ["mehar00zain@gmail.com"],
+        fail_silently=False,
+    )
+    return redirect("home")
