@@ -160,7 +160,8 @@ def smtp(request):
     send_mail(
         "Testing",
         "Your Test Message",
-        "mail.nullxcoder.xyz",
+        "info@nullxcoder.xyz",  # Use the sender email address here
         ["mehar00zain@gmail.com"],
         fail_silently=False,
     )
+    return HttpResponse("Email sent successfully")

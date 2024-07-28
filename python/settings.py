@@ -176,3 +176,4 @@ port: '465'
 username: 'info@nullxcoder.xyz'
 password: 'Pq-?C@6TH27Z'
 use_tls: True
+EMAIL_USE_SSL = True
