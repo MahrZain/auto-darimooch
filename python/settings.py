@@ -172,7 +172,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'mail.nullxcoder.xyz'
-EMAIL_PORT = 587  # or 587 if you switch to TLS
-EMAIL_USE_TLS = True  # or True if you switch to port 587  # or False if you switch to port 587
+EMAIL_PORT = 465  # or 587 if you switch to TLS
+EMAIL_USE_TLS = False  # or True if you switch to port 587  # or False if you switch to port 587
+EMAIL_USE_SSL = True  # or True if you switch to port 587  # or False if you switch to port 587
 EMAIL_HOST_USER = 'info@nullxcoder.xyz'
 EMAIL_HOST_PASSWORD = 'Pq-?C@6TH27Z'

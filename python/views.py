@@ -163,7 +163,7 @@ def smtp(request):
         "News Letter For DariMooch",
         f"Hi this Email:  { email }   Want To Subscribe For Your News Letter. -- form DariMooch",
         "info@nullxcoder.xyz",
-        ["mehar00zain@gmail.com"],
+        ["nullxcoder0@gmail.com"],
         fail_silently=False,
     )
     return redirect("home")
