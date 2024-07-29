@@ -188,11 +188,5 @@ def submit_complaint(request):
             'response':clientkey
         }
         r = request.POST('https://www.google.com/recaptcha/api/siteverify', data=captchaData)
-        send_mail(
-            "From DariMooch Complaint!",
-            f""" Message: {complain}  --------------------- From Dari Mooch Complaint System -------------------------------- """,
-            f"{email}",
-            ["info@nullxcoder.xyz"],
-            fail_silently=False,
-        )
+        print('hello')
     return render(request, "complaint.html")
