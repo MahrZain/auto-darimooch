@@ -1,6 +1,7 @@
 {% include 'header.html' %}
 <div class="container w-50">
-    <form action="{% url 'submit_complaint' %}">
+    <form action="{% url 'submit_complaint' %}" method="post">
+        {% csrf_token %}
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Email address</label>
             <input name="email" type="email" class="form-control" id="exampleFormControlInput1"
@@ -11,9 +12,12 @@
             <textarea name="complain" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
         <div class="col-12">
-           <button class="btn btn-primary" type="submit">Submit Complain</button>
+            <button class="g-recaptcha btn btn-primary" type="submit" data-sitekey="6LeXkxoqAAAAAEH068X4TNhmWj4cbANdzLWWZJch" data-callback="onSubmit">Submit</button>
+           <!-- <button class="btn btn-primary" type="submit">Submit Complain</button> -->
         </div>
 
     </form>
 </div>
+<script src="https://www.google.com/recaptcha/api.js?render=6LeXkxoqAAAAAEH068X4TNhmWj4cbANdzLWWZJch"></script>
+
 {% include 'footer.html' %}

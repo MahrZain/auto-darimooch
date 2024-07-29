@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-ll0-$z*lr1mrtl+s=yp3&ecj0bi+$on9-_0gb7&w+*z$+^fl!b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'announcement',
     'navbar',
     'contact',
+    'django_recaptcha',
 ]
 
 MIDDLEWARE = [
@@ -177,3 +178,6 @@ EMAIL_USE_TLS = False  # or True if you switch to port 587  # or False if you sw
 EMAIL_USE_SSL = True  # or True if you switch to port 587  # or False if you switch to port 587
 EMAIL_HOST_USER = 'info@nullxcoder.xyz'
 EMAIL_HOST_PASSWORD = 'Pq-?C@6TH27Z'
+
+RECAPTCHA_PUBLIC_KEY = '6LeXkxoqAAAAAEH068X4TNhmWj4cbANdzLWWZJch'
+RECAPTCHA_PRIVATE_KEY = '6LeXkxoqAAAAAHTGFV1u1-zJTyzi3Ksj157yIebI'

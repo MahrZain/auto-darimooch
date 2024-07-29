@@ -12,6 +12,8 @@ from django.contrib import messages
 from django.core.paginator import Paginator
 from django.core.mail import send_mail
 from django.http import HttpResponse
+from django_recaptcha.fields import ReCaptchaField
+import json
 import os
 
 
@@ -174,13 +176,27 @@ def complaint(request):
 
 
 def submit_complaint(request):
-    email = request.GET["email"]
-    complain = request.GET["complain"]
-    send_mail(
-        "From DariMooch Complaint!",
-        f''' Message: {complain}  --------------------- From Dari Mooch Complaint System -------------------------------- ''',
-        f"{email}",
-        ["info@nullxcoder.xyz"],
-        fail_silently=False,
+    if request.method == 'POST':
+        email = request.POST["email"]
+        complain = request.POST["complain"]
+        
+        #Recaptcha Stuff
+        clientkey = request.POST['g-recaptcha-response']
+        secretkey = '6LeXkxoqAAAAAHTGFV1u1-zJTyzi3Ksj157yIebI'
+        clientData = {
+            'secret': secretkey,
+            'response':clientkey
+        }
+        r = request.POST('https://www.google.com/recaptcha/api/siteverify', data=clientData)
+        response = json.loads(r)
+        verify = response['success']
+        print(verify)
+        captcha = ReCaptchaField()
+        send_mail(
+            "From DariMooch Complaint!",
+            f""" Message: {complain}  --------------------- From Dari Mooch Complaint System -------------------------------- """,
+            f"{email}",
+            ["info@nullxcoder.xyz"],
+            fail_silently=False,
         )
     return render(request, "complaint.html")
