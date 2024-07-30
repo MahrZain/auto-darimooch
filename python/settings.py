@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'navbar',
     'contact',
     'django_recaptcha',
+    'category'
 ]
 
 MIDDLEWARE = [

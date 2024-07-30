@@ -11,7 +11,8 @@ class productsAdmin(admin.ModelAdmin):
         "category",
         "sale",
         "total_amount_products",
-        "image"
+        "image",
+        "cat_id",
     ]
 
 
